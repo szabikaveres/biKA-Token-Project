@@ -10,19 +10,45 @@ contract Token {
     uint public totalSupply;
 
     //Track balances 
-mapping (address => uint) public balanceOf; //mapping lets you store information with key-value pairs
+    mapping (address => uint) public balanceOf; //mapping lets you store information with key-value pairs
     
+    event Transfer(
+        address indexed from, 
+        address indexed to, 
+        uint value
+        );
+
     // send tokens 
 
-    constructor(string memory _name, string memory _symbol, uint _totalSupply) {
+    constructor(
+        string memory _name, 
+        string memory _symbol, 
+        uint _totalSupply
+        ) {
         name = _name;
         symbol = _symbol;
         totalSupply = _totalSupply * (10**decimals);
         balanceOf[msg.sender] = totalSupply; //update the balance of the person deploying the SC, to the entire total supplyof the tokens that we specified above(_totalSupply).
-        //Basically going to take alll the tokens and going to sign them to the deployer
+        //Basically going to take all the tokens and going to sign them to the deployer
     }
 
+    function transfer(address _to, uint _value) 
+        public 
+        returns (bool success) 
+    {
+        // require that sender has enough tokens to spend
+        require (balanceOf[msg.sender] >= _value);
+        require(_to != address(0));
 
+        //deduct tokens from spender
+       balanceOf[msg.sender] = balanceOf[msg.sender] - _value;
+        //credit tokens to spender
+        balanceOf[_to] = balanceOf[_to] + _value;
+
+        //Emit Event
+        emit Transfer(msg.sender, _to, _value);
+        return true;
+
+    }
 
 }
-
