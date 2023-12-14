@@ -11,14 +11,20 @@ contract Token {
 
     //Track balances 
     mapping (address => uint) public balanceOf; //mapping lets you store information with key-value pairs
+    mapping (address => mapping (address => uint )) public allowance;
     
+    // send tokens 
     event Transfer(
         address indexed from, 
         address indexed to, 
         uint value
         );
 
-    // send tokens 
+    event Approval(
+        address indexed owner,
+        address indexed spender,
+        uint value
+    );
 
     constructor(
         string memory _name, 
@@ -49,6 +55,18 @@ contract Token {
         emit Transfer(msg.sender, _to, _value);
         return true;
 
+    }
+
+    function approve (address _spender, uint _value) 
+    public 
+    returns(bool success)
+    {
+        require(_spender != address(0));
+
+        allowance[msg.sender][_spender] = _value;
+
+        emit Approval(msg.sender, _spender, _value);
+        return true;
     }
 
 }
