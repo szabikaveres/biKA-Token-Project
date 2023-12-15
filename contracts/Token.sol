@@ -30,7 +30,7 @@ contract Token {
         string memory _name, 
         string memory _symbol, 
         uint _totalSupply
-        ) {
+        ){
         name = _name;
         symbol = _symbol;
         totalSupply = _totalSupply * (10**decimals);
@@ -38,26 +38,37 @@ contract Token {
         //Basically going to take all the tokens and going to sign them to the deployer
     }
 
-    function transfer(address _to, uint _value) 
+    function transfer(
+        address _to, 
+        uint _value) 
         public 
         returns (bool success) 
     {
         // require that sender has enough tokens to spend
         require (balanceOf[msg.sender] >= _value);
-        require(_to != address(0));
 
-        //deduct tokens from spender
-       balanceOf[msg.sender] = balanceOf[msg.sender] - _value;
-        //credit tokens to spender
-        balanceOf[_to] = balanceOf[_to] + _value;
+        _transfer(msg.sender, _to, _value);
 
-        //Emit Event
-        emit Transfer(msg.sender, _to, _value);
         return true;
 
     }
 
-    function approve (address _spender, uint _value) 
+    function _transfer(
+        address _from,
+        address _to,
+        uint256 _value
+    ) internal {
+        require(_to != address(0));
+
+        balanceOf[_from] = balanceOf[_from] - _value;
+        balanceOf[_to] = balanceOf[_to] + _value;
+
+        emit Transfer(_from, _to, _value);
+    }
+
+    function approve (
+        address _spender, 
+        uint _value) 
     public 
     returns(bool success)
     {
@@ -69,4 +80,24 @@ contract Token {
         return true;
     }
 
+    function transferFrom(
+        address _from,
+        address _to,
+        uint256 _value
+    )
+        public
+        returns (bool success)
+    {
+        //check approval-mapping, than nested maping
+        require(_value <= balanceOf[_from]);// has enough tokens
+        require(_value <= allowance[_from][msg.sender]);// the value of the toens doesn't exceed the allowed amount
+
+        //Reset the allowance-to avoid doubl spent
+        allowance[_from][msg.sender] = allowance[_from][msg.sender] - _value;
+
+        //spend the amount
+        _transfer(_from, _to, _value);
+
+        return true;
+    }
 }
