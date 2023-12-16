@@ -20,4 +20,3 @@ module.exports = {
   }
 };
 
-//Token Deployed to: 0x9a326750BDf523589264418bF681e7cf59764f9A
