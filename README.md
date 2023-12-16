@@ -1,18 +1,18 @@
 # Cryptocurrency-Backend-Project
 
-# Welcome to my real world Cryptocurrency project, currently deployed to Sepolia TestNet.
+ Welcome to my real world Cryptocurrency project, currently deployed to Sepolia TestNet.
 
-# This cryptocurrency has been created as per ERC-20 standard and tests developed as per Hardhat specifics. 
+ This cryptocurrency has been created as per ERC-20 standard and tests developed as per Hardhat specifics. 
 
-# Token name: "Dapp University"
+ Token name: "Dapp University"
 
-# Token symbol: "DAPPU"
+ Token symbol: "DAPPU"
 
-# Token decimal: 18
+ Token decimal: 18
 
-# Token contract address: 0x9a326750BDf523589264418bF681e7cf59764f9A
+ Token contract address: 0x9a326750BDf523589264418bF681e7cf59764f9A
 
-# Contract Source Code: https://sepolia.etherscan.io/address/0x9a326750BDf523589264418bF681e7cf59764f9A
+ Contract Source Code: https://sepolia.etherscan.io/address/0x9a326750BDf523589264418bF681e7cf59764f9A
 
 
 # Resources
@@ -33,7 +33,9 @@
 
 • Chai Docs: https://www.chaijs.com/
 
-All rights reserved: Szabika Veres -  https://github.com/szabikaveres
+
+
+# All rights reserved: Szabika Veres -  https://github.com/szabikaveres
 
 
 
