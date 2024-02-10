@@ -1,4 +1,4 @@
-# Cryptocurrency-Backend-Project
+# biKA-Token-Project
 
 ![screenshot 1](https://github.com/szabikaveres/Cryptocurrency-Backend-Project/assets/114937278/6d4d71fe-54dc-4e88-9ef9-7806641b6d63)
 
@@ -6,7 +6,7 @@
 
  This cryptocurrency has been created as per ERC-20 standard and tests developed as per Hardhat specifics. 
 
- Token name: "Szabika V"
+ Token name: "Szabika VRS"
 
  Token symbol: "biKA"
 
