@@ -1,5 +1,7 @@
 # Cryptocurrency-Backend-Project
 
+![screenshot 1](src\screenshots\screenshot 1.png)
+
  Welcome to my real world Cryptocurrency project, currently deployed to Sepolia TestNet.
 
  This cryptocurrency has been created as per ERC-20 standard and tests developed as per Hardhat specifics. 
