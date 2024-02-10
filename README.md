@@ -4,15 +4,15 @@
 
  This cryptocurrency has been created as per ERC-20 standard and tests developed as per Hardhat specifics. 
 
- Token name: "Dapp University"
+ Token name: "Szabika V"
 
- Token symbol: "DAPPU"
+ Token symbol: "biKA"
 
  Token decimal: 18
 
- Token contract address: 0x9a326750BDf523589264418bF681e7cf59764f9A
+ Token contract address: 0xfb7a1Bf728e8436CCdA0C5e105f594d0FA01c923
 
- Contract Source Code: https://sepolia.etherscan.io/address/0x9a326750BDf523589264418bF681e7cf59764f9A
+ Contract Source Code: https://sepolia.etherscan.io/address/0xfb7a1Bf728e8436CCdA0C5e105f594d0FA01c923
 
 
 # Resources
