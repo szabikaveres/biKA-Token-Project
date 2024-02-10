@@ -1,6 +1,6 @@
 # Cryptocurrency-Backend-Project
 
-![screenshot 1](src\screenshots\screenshot 1.png)
+![screenshot 1](https://drive.google.com/file/d/1gRkr0Tdfo_HOK7Frbs1BbQUnUsmutTyX/view?usp=sharing)
 
  Welcome to my real world Cryptocurrency project, currently deployed to Sepolia TestNet.
 
